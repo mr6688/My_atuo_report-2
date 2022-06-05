@@ -1,0 +1,17 @@
+name: tiwentianbao
+
+on:
+  workflow_dispatch: #在actions界面点击即可运行
+  schedule:
+    - cron: '10 2,3 * * *'  
+  #在UTC时间2:10,3:10运行，也就是北京时间10点10分和11点10分
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - run:  pip install -r ./requests.txt  #此处为安装依赖包
+    - run: python ./temperature.py  #此处为python代码的文件名
