@@ -3,8 +3,8 @@ name: tiwentianbao1
 on:
   workflow_dispatch: #在actions界面点击即可运行
   schedule:
-    - cron: '10 4,5 * * *'  
-  #Runs at 04:10 and 05:10 UTC every day，也就是北京时间12点10分和13点10分
+    - cron: '10 3,4 * * *'  
+  #Runs at 03:10 and 04:10 UTC every day.beijing + 8
 jobs:
   build:
 
